@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas Kami - Website Resmi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Playwrite+RO:wght@100..400&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+</head>
+<body class="font-sans bg-white text-gray-800 overflow-x-hidden" style="font-family: 'sansation';">
+    <!-- 3D Animation Background -->
+    <div id="animation-container"></div>
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 bg-blue-800 rounded-tr-md flex items-center justify-center text-white font-bold rounded-bl-md">TKJ</div>
+                    <span class="font-semibold text-blue-800 text-lg" style="font-family: 'playwrite RO';">sapuluah tekaje ciek</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-blue-800 hover:text-blue-600">Beranda</a>
+                    <a href="#about" class="nav-link text-blue-800 hover:text-blue-600">Tentang</a>
+                    <a href="#gallery" class="nav-link text-blue-800 hover:text-blue-600">Album</a>
+                    <a href="#contact" class="nav-link text-blue-800 hover:text-blue-600">Kontak</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-blue-800 focus:outline-none ">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu bg-white md:hidden">
+            <div class="px-4 py-2 space-y-4">
+                <a href="#home" class="block nav-link text-blue-800 hover:text-blue-600">Beranda</a>
+                <a href="#about" class="block nav-link text-blue-800 hover:text-blue-600">Tentang</a>
+                <a href="#gallery" class="block nav-link text-blue-800 hover:text-blue-600">Album</a>
+                <a href="#contact" class="block nav-link text-blue-800 hover:text-blue-600">Kontak</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white py-20 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Selamat Datang Di <span class="text-blue-400">X TKJ 1</span></h1>
+                <p class="text-xl md:text-2xl mb-8">Pembelajaran yang menyenangkan dan penuh kreativitas bersama-sama</p>
+                <a href="#about" class="bg-white  text-blue-800 px-6 py-3 rounded-md shadow-[0_8px_10px_rgba(0,0,0,0.2)] font-semibold  hover: transition-all duration-300 hover:bg-blue-700 hover:text-white hover:scale-110 text-white-100 inline-block">Kenali Kami</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="w-90 h-90 md:w-90 md:h-85 bg-white rounded-tl-[40%] rounded-tr-[40%] overflow-hidden shadow-[0_6px_10px_rgba(0,0,0,0.6)] floating">
+                    <img src="assets/tkj-6.jpg" alt="Kelas Kami" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-blue-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-4">Tentang <span class="text-blue-600">X TKJ 1</span></h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Sekilas tentang <span class="text-blue-600 font-bold">T</span>eknik <span class="text-blue-600 font-bold">K</span>omputer <span class="text-blue-600 font-bold">J</span>aringan.</p>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="card-3d bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">Visi Kami</h3>
+                    <p class="text-gray-700 mb-6">Menjadi jurusan unggulan dan profesional dalam bidang teknologi informasi, yang mampu menghasilkan lulusan berkualitas, berjiwa wirausaha, serta berakhlak mulia dalam menghadapi tantangan era digital dan revolusi industri 4.0.</p>
+                    
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">Misi Kami</h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li>Membangun dan Mengelola Infrastruktur Jaringan Komputer</li>
+                        <li>Mendorong kreativitas dan inovasi dalam pembelajaran</li>
+                        <li>Membangun karakter siswa yang bertanggung jawab</li>
+                        <li>Meningkatkan Kemampuan Problem Solving dan Troubleshooting</li>
+                    </ul>
+                </div>
+                
+                <div class="card-3d bg-blue-800 text-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Profil Kelas</h3>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-blue-700 p-4 rounded-lg">
+                            <p class="text-sm text-blue-200">Jumlah Siswa</p>
+                            <p class="text-2xl font-bold">35</p>
+                        </div>
+                        <div class="bg-blue-700 p-4 rounded-lg">
+                            <p class="text-sm text-blue-200">Wali Kelas</p>
+                            <p class="text-xl font-bold">Bu Noza, S.Pd</p>
+                        </div>
+                        <div class="bg-blue-700 p-4 rounded-lg">
+                            <p class="text-sm text-blue-200">Tahun Ajaran</p>
+                            <p class="text-xl font-bold">2024/2025</p>
+                        </div>
+                        <div class="bg-blue-700 p-4 rounded-lg">
+                            <p class="text-sm text-blue-200">Jurusan</p>
+            <p class="text-xl font-bold">T. Komputer Jaringan</p>
+        </div>
+    </div>
+    
+    <h3 class="text-2xl font-semibold mb-4">Kegiatan Unggulan</h3>
+    <div class="flex flex-wrap gap-2">
+        <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">Troubleshooting Hardware</span>
+        <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">Software Maintenance</span>
+        <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">Network Simulation</span>
+        <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">IP Configuration</span>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-4">Album <span class="text-blue-600">Kelas</span></h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Kumpulan <span class="text-blue-600 font-bold">momen berharga</span> dan <span class="text-blue-600 font-bold">kegiatan kami</span> selama belajar bersama di kelas ini.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg" data-index="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/tkj-1.jpg" alt="haloo" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-blue-800 mb-2">Absensi Foto</h3>
+                        <p class="text-gray-600 text-sm">Kebiasaan yang rutin dilaksanakan setelah shalat dhuzur.</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg" data-index="1">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/tkj-7.jpg" alt="haloo" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-blue-800 mb-2">Kunjungan Alumni TKJ</h3>
+                        <p class="text-gray-600 text-sm">Belajar bersama dengan alumni angkatan 2020.</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg" data-index="2">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/tkj-2.jpg" alt="haloo" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-blue-800 mb-2">Praktek Sejarah</h3>
+                        <p class="text-gray-600 text-sm">Membuat scrapbook serta melakukan praktek kunjungan informasi.</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg" data-index="3">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/tkj-4.jpg" alt="halo" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-blue-800 mb-2">Belajar Dengan Guru PL</h3>
+                        <p class="text-gray-600 text-sm">Materi baru dengan guru praktek lapangan yang menyenangkan.</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg" data-index="4">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/tkj-9.jpg" alt="haloo" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-blue-800 mb-2">Foto Pertama Kali</h3>
+                        <p class="text-gray-600 text-sm">Foto awal yang diambil dan akan segera genap satu tahun.</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg" data-index="5">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/tkj-3.jpg" alt="haloo" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-blue-800 mb-2">H-1 Bersama Guru PL</h3>
+                        <p class="text-gray-600 text-sm">Hari terakhir praktek lapangan bersama guru yang menyenangkan.</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg" data-index="6">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/tkj-5.jpg" alt="haloo" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-blue-800 mb-2">Hari Guru</h3>
+                        <p class="text-gray-600 text-sm">Merayakan hari guru sebelum memotong kue bersama walikelas.</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg" data-index="7">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/tkj-8.jpg" alt="haloo" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-blue-800 mb-2">H-1 Dengan Alumni 2020</h3>
+                        <p class="text-gray-600 text-sm">Kunjungan terakhir dari alumni yang menyenangkan.</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg" data-index="8">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/tkj-10.jpg" alt="haloo" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-blue-800 mb-2">Belajar Sejarah Sebelum Puasa</h3>
+                        <p class="text-gray-600 text-sm">Foto yang diambil tepat sehari sebelum berpuasa dengan mapel yang penuh cerita.</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 10
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg" data-index="9">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Perayaan" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-blue-800 mb-2">Perayaan Kelulusan</h3>
+                        <p class="text-gray-600 text-sm">Momen bahagia setelah menyelesaikan ujian akhir dan merayakan keberhasilan bersama.</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="lightbox-close">&times;</span>
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+        <div class="lightbox-nav lightbox-prev" id="lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="lightbox-nav lightbox-next" id="lightbox-next">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-blue-800 text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Hubungi <span class="text-blue-200">Kami</span></h2>
+            <p class="text-center text-white-600 mb-12 max-w-2xl mx-auto">Jika tertarik dengan website ini.</p>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="card-3d bg-blue-700 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6">Informasi Kontak</h3>
+                    
+                    <div class="space-y-4">
+                        <!-- <div class="flex items-start space-x-4">
+                            <i class="fas fa-map-marker-alt mt-1 text-blue-300"></i>
+                            <div>
+                                <h4 class="font-semibold">Alamat</h4>
+                                <p>Jl. Pendidikan No. 123, Kota Pendidikan, 12345</p>
+                            </div>
+                        </div> -->
+                        
+                        <!-- <div class="flex items-start space-x-4">
+                            <i class="fas fa-envelope mt-1 text-blue-300"></i>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p>kelaskami@sekolah.example</p>
+                            </div>
+                        </div> -->
+                        
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-phone-alt mt-1 text-blue-300"></i>
+                            <div>
+                                <h4 class="font-semibold">Telepon</h4>
+                                <p>(021) 1234-5678</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Media Sosial</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/tekajee.one1/" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <span class="mt-2 ">Tekajee1</span>
+                            <a href="https://www.instagram.com/ryy.szn/" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <span class="mt-2 ">A Fahry SP</span>
+                            <!-- <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div class="card-3d bg-white text-gray-800 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6">Kirim Pesan</h3>
+                    
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block mb-2 font-medium">Nama</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="message" class="block mb-2 font-medium">Pesan</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-800 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div> -->
+    </section> 
+    
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-blue-700 rounded-tr-md rounded-bl-md flex items-center justify-center text-white font-bold">TKJ</div>
+                        <span style="font-family: 'playwrite RO';">sapuluah tekaje ciek</span>
+                    </div>
+                    <p class="text-sm text-white-300 mt-2 opacity-50">Dibuat | Afahry Saputra</p>
+                    <p class="text-sm text-white-300 mt-2 opacity-25">Dibuat | Untuk Mengingat Mengingat Kelas Random Yang Aneh Ini</p>
+                </div>
+                
+                <div class="text-sm text-blue-300">
+                    <p>&copy; 2025 sapuluah tekaje ciek. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-blue-800 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script src="script.js"></script>
+</body>
+</html>
